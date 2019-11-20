@@ -24,6 +24,7 @@ class UpdatedMoviesController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .green
         configuredStepper()
+        configuredSlider()
     }
     
     func configuredStepper() {
@@ -32,9 +33,17 @@ class UpdatedMoviesController: UIViewController {
           theStepper.stepValue = 1
           theStepper.value = 17
       }
+    
+    func configuredSlider() {
+        theSlider.minimumValue = 1
+        theSlider.maximumValue = 45
+        theSlider.value = 17
+    }
 
     @IBAction func theFunction(_ sender: UIStepper) {
         font = sender.value
+        updatedLabel.font = UIFont.systemFont(ofSize: CGFloat(theStepper!.value))
+        theSlider.value = Float(theStepper.value)
     }
     
     

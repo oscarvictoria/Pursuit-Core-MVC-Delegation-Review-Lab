@@ -18,6 +18,11 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    var fontSize = 17.0
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +36,11 @@ class ViewController: UIViewController {
     
     @IBAction func updateUIFromUnwindSegue(segue: UIStoryboardSegue) {
         print("prepare for segue...")
-       
+        guard let updatedVC = segue.source as? UpdatedMoviesController else {
+            fatalError("Could not update view controller")
+        }
+        fontSize = updatedVC.font
+        updateUI()
     }
 
 }
@@ -47,7 +56,10 @@ extension ViewController: UITableViewDataSource {
         let someMovie = theMovies[indexPath.row]
         
         cell.textLabel?.text = someMovie.name
+        cell.detailTextLabel?.text = someMovie.year.description
         cell.imageView?.image = UIImage(named: someMovie.posterImageName)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: CGFloat(fontSize))
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: CGFloat(fontSize))
         return cell
     }
 }
