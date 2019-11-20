@@ -28,6 +28,11 @@ class ViewController: UIViewController {
     func updateUI() {
         theMovies = Movie.allMovies
     }
+    
+    @IBAction func updateUIFromUnwindSegue(segue: UIStoryboardSegue) {
+        print("prepare for segue...")
+       
+    }
 
 }
 
