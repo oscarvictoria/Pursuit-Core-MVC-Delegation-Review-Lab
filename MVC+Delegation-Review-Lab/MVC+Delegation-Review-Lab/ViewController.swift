@@ -12,23 +12,37 @@ class ViewController: UIViewController {
     
 @IBOutlet weak var tableView: UITableView!
     
+    var theMovies = [Movie]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        updateUI()
     }
 
+    func updateUI() {
+        theMovies = Movie.allMovies
+    }
 
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return theMovies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
+        
+        let someMovie = theMovies[indexPath.row]
+        
+        cell.textLabel?.text = someMovie.name
+        cell.imageView?.image = UIImage(named: someMovie.posterImageName)
         return cell
     }
 }
