@@ -78,6 +78,9 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="0bU-3f-QRR">
                                 <rect key="frame" x="160" y="259" width="94" height="32"/>
+                                <connections>
+                                    <action selector="theFunction:" destination="nr3-0L-TNB" eventType="valueChanged" id="b4v-RO-Wdo"/>
+                                </connections>
                             </stepper>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Cb-AY-u1b">
                                 <rect key="frame" x="43" y="179" width="328" height="31"/>
@@ -108,6 +111,11 @@
                         <viewLayoutGuide key="safeArea" id="JpH-3t-gWi"/>
                     </view>
                     <navigationItem key="navigationItem" id="xbZ-L8-nVM"/>
+                    <connections>
+                        <outlet property="theSlider" destination="4Cb-AY-u1b" id="CGY-5y-5nD"/>
+                        <outlet property="theStepper" destination="0bU-3f-QRR" id="dfe-XR-hyU"/>
+                        <outlet property="updatedLabel" destination="doI-c2-Epl" id="GVC-Pg-fhF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSq-gv-GuK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Gao-4Z-ayJ" userLabel="Exit" sceneMemberID="exit"/>
