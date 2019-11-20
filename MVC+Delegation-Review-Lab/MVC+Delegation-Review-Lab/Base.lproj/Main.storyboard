@@ -41,12 +41,35 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="hmj-5j-GQi">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="N7R-X4-OPa"/>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="N7R-X4-OPa">
+                            <connections>
+                                <segue destination="nr3-0L-TNB" kind="show" id="o00-wx-2LU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="LgP-FP-Apu" id="mie-le-5Ce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ApW-uD-E6G">
+            <objects>
+                <viewController id="nr3-0L-TNB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="io0-uJ-let">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JpH-3t-gWi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xbZ-L8-nVM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oSq-gv-GuK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1959" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7r9-HX-tIT">
