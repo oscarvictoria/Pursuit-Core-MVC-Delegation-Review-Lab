@@ -100,6 +100,9 @@
                             </stepper>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Cb-AY-u1b">
                                 <rect key="frame" x="43" y="179" width="328" height="31"/>
+                                <connections>
+                                    <action selector="theSliderAction:" destination="nr3-0L-TNB" eventType="valueChanged" id="4Wp-3Y-mW2"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size: 17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doI-c2-Epl">
                                 <rect key="frame" x="8" y="311" width="398" height="26.5"/>

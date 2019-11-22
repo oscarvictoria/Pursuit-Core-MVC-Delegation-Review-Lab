@@ -14,9 +14,16 @@ class UpdatedMoviesController: UIViewController {
     @IBOutlet weak var theSlider: UISlider!
     @IBOutlet weak var theStepper: UIStepper!
     
+    var sliderFont: Float = 17.0 {
+    didSet {
+        updatedLabel.text = "Font Size : \(Int(theSlider.value))"
+    }
+    }
+    
+    
     var font: Double = 17.0 {
         didSet {
-            updatedLabel.text = "Font Size: \(theStepper.value)"
+            updatedLabel.text = "Font Size: \(Int(theStepper.value))"
         }
     }
 
@@ -44,6 +51,12 @@ class UpdatedMoviesController: UIViewController {
         font = sender.value
         updatedLabel.font = UIFont.systemFont(ofSize: CGFloat(theStepper!.value))
         theSlider.value = Float(theStepper.value)
+        
+    }
+    
+    @IBAction func theSliderAction(_ sender: UISlider) {
+        sliderFont = sender.value
+        updatedLabel.font = UIFont.systemFont(ofSize: CGFloat(theSlider!.value))
     }
     
     

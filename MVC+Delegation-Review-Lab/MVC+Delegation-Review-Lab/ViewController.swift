@@ -40,6 +40,7 @@ class ViewController: UIViewController {
             fatalError("Could not update view controller")
         }
         fontSize = updatedVC.font
+        fontSize = Double(updatedVC.sliderFont)
         updateUI()
     }
 
